@@ -67,7 +67,8 @@ COPY --from=build-web /build /app/jellyfin-web
 COPY ./rootfs/. /
 
 # runtime dependencies
-RUN apk add --no-cache tzdata s6-overlay aspnetcore8-runtime curl ffmpeg
+RUN apk add --no-cache tzdata s6-overlay aspnetcore8-runtime curl \
+    ffmpeg intel-media-driver
 
 # run using s6-overlay
 ENTRYPOINT ["/init"]
