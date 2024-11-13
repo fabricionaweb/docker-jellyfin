@@ -37,7 +37,7 @@ RUN dotnet publish ./Jellyfin.Server \
 FROM base AS build-web
 
 # dependencies
-RUN apk add --no-cache nodejs npm
+RUN apk add --no-cache npm
 
 # node_modules
 COPY --from=source-web /src/package*.json /src/tsconfig.json ./
